@@ -1,0 +1,142 @@
+<?php defined('IN_PHPCMS') or exit('No permission resources.'); ?>﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><?php echo $title;?></title>
+<link rel="stylesheet" href="mystatic/show_video/css/2013_base.css" />
+<script src="mystatic/show_video/js/2013_jquery-1.7.1.min.js"></script>
+<link rel="stylesheet" href="mystatic/show_video/css/images-css.css" />
+
+<script type="text/javascript">
+function doZoom(size){
+  document.getElementById("content-fontsize").style.fontSize=size+"px";
+ }
+</script>
+<style>
+.re_news h3{ color:#ff9900; padding-top:40px;}
+.re_news li{ padding-left:10px; line-height:2em; font-size:14px;}
+table{display:inline-block;}
+#content-fontsize *{word-break:normal!important; font-family: "Microsoft Yahei"!important; }
+.newsContent .text p{line-hieght:1.7em; margin-top:24px;}
+.newsContent .text{color:#333;}
+</style>
+</head>
+
+<body class="web-background" id="discover">
+  <div class="witer-backgroud">
+    <div class="header-news">
+      <a href="/"><img src="mystatic/show_video/picture/2013_logo.png" alt="华润集团" /></a>
+    </div><!--end header-->
+    
+    <div class="newsmain">         
+        <div class="newsContent">
+            <div><h1 style="line-height: 40px;padding: 20px 0;"><?php echo $title;?></h1></div>        
+            <div class="info"> <span>发稿时间：<?php echo $inputtime;?> </span><span>来源：<?php echo $copyfrom;?></span> </div>
+            <div class="text" id="content-fontsize"> 
+            <!-- <?php echo strip_tags($content);?>       -->
+	           <DIV class='TRS_Editor'>
+                <p align="center">
+                  <video src="<?php echo strip_tags($content);?>" width="784" height="517" controls="controls" autoplay>
+                  </video>
+                </p>
+             </DIV>           
+              <div class="re_news">
+              <h3>相关视频：</h3>
+              <!-- <div class="videomain fr">
+                <div class="videolist">
+                  <ul>  
+                    <li class="item">
+                      <div class="pic">
+                        <img src="mymystatic/show_video/video/picture/w020180309494480360271.jpg" alt="jianjei.jpg" width="169" height="120"/>
+                      </div>
+                      <div class="conts">
+                      <p>华润集团企业简介片</p>
+                      </div>
+                    </li> 
+                  </ul>
+                </div> 
+              </div> -->
+              </div>
+              <div class="newsContentFooter marginbottom">
+                <ul>
+                  <li class="print"><a onclick="javascript:window.print();" href="javascript:void(0)" title="打印"><img src="mystatic/show_video/picture/2013_newscontent_16.gif" width="16" height="14" /></a></li>
+                  <!--  <li class="readed"><a href="#">188</a></li>
+                        <li class="like"><a href="#">1568</a></li> -->
+                  <li class="share">
+                  <!-- JiaThis Button BEGIN -->
+                  <div class="jiathis_style"> <span class="jiathis_txt">分享到：</span> <a class="jiathis_button_icons_1"></a> <a class="jiathis_button_icons_2"></a> <a class="jiathis_button_icons_3"></a> <a class="jiathis_button_icons_4"></a> <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a></div>
+                  <script src="mystatic/show_video/js/jia.js"></script>
+                  <!-- JiaThis Button END -->
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+  </div>
+  <div class="footer">
+    <ul>        
+        <li><a href="http://www.crc.com.cn/other_1/privacy/" title="隐私安全">隐私安全</a></li>
+        <li>|</li>
+        <li><a href="http://www.crc.com.cn/other_1/nav/" title="站外导航">站外导航</a></li>
+        <li>|</li>
+        <li><a href="http://www.crc.com.cn/other_1/banquan/" title="版权所有">版权所有</a></li>
+        <li>|</li>
+        <li><a href="http://www.crc.com.cn/other_1/faq/" title="常见问题">常见问题</a></li>
+        <li>|</li>
+        <li><a href="http://www.crc.com.cn/communication/contact/" title="联系方式">联系方式</a></li>
+        
+    </ul>
+
+    <p>Copyright &copy; 华润（集团）有限公司　&nbsp;&nbsp; 京ICP备05045648号　&nbsp;&nbsp;   技术支持：华润集团信息管理部</p>
+ <!--   <div class="btm"><img src="mystatic/show_video/picture/2013_cn.gif" alt="统计" /></div> -->
+</div><!--end footer-->
+<script src="mystatic/show_video/js/dma.js" type="text/javascript"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?5190b9c7a9c9a676e2ddb146157eeb9b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!--end footer-->
+</div>
+
+<div class="gotopbox">
+	<div style="display: none" id="goTopBtn">
+    	<a class="iconbg btn-gotohome" href="../../../">返回到首页</a>
+    	<a class="iconbg btn-gototop"  id="btn-gototop">回到顶部</a>
+    </div>
+</div>
+<script type="text/javascript">
+function removeEditor(){
+var con = document.getElementById('content-fontsize');
+if(!con){ 
+	return;
+	}
+var tags=con.getElementsByTagName("div");
+if(!tags){ 
+	return;
+	}
+ for( var k in tags){
+if(tags[k].className=="TRS_Editor"){
+	tags[k].className="";
+	}
+ }
+}
+removeEditor();
+</script>
+
+
+<!--
+<script src="mystatic/show_video/js/2013_jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="mystatic/show_video/js/images-plug.js"></script>
+-->
+<script src="mystatic/show_video/js/dma.js" type="text/javascript"></script>
+
+</body>
+</html>

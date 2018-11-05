@@ -1,0 +1,359 @@
+<?php defined('IN_PHPCMS') or exit('No permission resources.'); ?>﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/images/favicon.ico" REL="shortcut icon" />
+<title>集团动态_华润集团欢迎您</title>
+<link rel="stylesheet" href="mystatic/page/css/base.css" />
+<link rel="stylesheet" href="mystatic/page/css/exchange.css" />
+<link rel="stylesheet" href="mystatic/page/css/jquery.ui.datepicker.css" />
+<link rel="stylesheet" href="mystatic/page/css/investor.css" />
+<link rel="stylesheet" href="mystatic/page/css/about.css" />
+<script src="mystatic/page/js/modernizr-2.5.3.min.js"></script>
+<script src="mystatic/page/js/jquery-1.7.1.min.js"></script>
+<script src="mystatic/page/js/main.js"></script>
+<script src="mystatic/page/js/scroll.js"></script>
+<script src="mystatic/page/js/gototop.js"></script>
+<script src="mystatic/page/js/jquery.ui.core.js"></script>
+<script src="mystatic/page/js/jquery.ui.datepicker.js"></script>
+</head>
+<body>
+<!--头部开始-->
+<style type="text/css">
+    #head{
+        height:110px;
+        background:#fff;
+        background: rgba(255, 255, 255, 0.6);
+
+    }
+    #head .layout{height:110px;overflow: visible;}
+    .navbody {
+        top: 65px;
+        width: 100%;
+        padding:0;
+        height: 40px;
+        line-height: 40px;
+    }
+    .h-right {padding-top: 30px;}
+    .subnav{padding-top:43px;}
+.subnav li{line-height:30px;}
+    .subnavbg { margin-top: -1px;}
+    .logo{ padding-top: 35px;}
+    .logo a{display:inline-block;width:100px;height:50px;background:url("mystatic/page/images/logo_80th_new.png") left top no-repeat;}
+    .logo .logo-80th{ 
+         background-position: -100px 0;
+         width: 125px;
+    }
+    .header .nav li{padding-left:23px;}
+    .sub-ul06 {
+    right: -102px;
+}   
+    .sub-ul03 {
+        right: -417px;
+    }
+.sub-ul03 ul li {
+    display: inline-block;
+    vertical-align: top;
+}
+    .sub-ul02 {
+        left: -40px;
+    }
+    .sub-ul01 {
+        left: -85px;
+    }
+    .sub-ul04 {
+    right: -136px;
+    width: 560px;
+    }
+    .subnav-news{
+    left: -223px
+}
+    .h-r-search input{outline:none;}
+.nav_li .on{height:45px;}
+</style>
+
+<div class="header" id="head">
+    <div class="layout">
+    <div class="header_top">
+       <div class="logo">
+<a href="http://www.crc.com.cn/index_12770.htm"></a><a class="logo-80th" href="http://www.crc.com.cn/80th/" target="_blank"></a> 
+    </div>
+        <div class="h-right">
+            <ul class="fl">
+                <li class="li_a"><a href="" target="_blank" id="toCrcHome">综合内网</a></li>
+                <li class="li_a li_Eng"><a href="https://mail.crc.com.hk/owa/" target="_blank">Web Mail</a></li>
+                <li class="li_a"><a href="http://www.crc.com.cn/other/group/" target="_blank">华润网群</a></li>
+                <li class="li_a li_Eng"><a href="http://en.crc.com.cn/">English</a></li>
+                <li class="li_a"><a href="javascript:StranBody();" id="StranLink">繁體版</a></li>
+            </ul>
+            <div class="fl h-r-search">
+                <form target="_blank" method="get" action="index.php" name="search">
+                    <input type="hidden" name="m" value="search" />
+                    <input type="hidden" name="c" value="index" />
+                    <input type="hidden" name="a" value="init" />
+                    <input type="hidden" name="typeid" value="1" id="typeid"/>
+                    <input type="hidden" name="siteid" value="1" id="siteid"/>                    
+                    <input class="text" name="q" id="searchword" type="text" value />
+                    <input class="iconbg btn-search-t" type="submit" value="search" />
+                    
+                </form>
+            </div>
+            
+        </div><!--end h-right-->
+    </div><!--end header_top-->
+    <div class="navbody">
+        <div class="nav">
+            <ul class="nav_ul"> 
+               <li class="nav_li">
+                <a class="on" href="?m=content&c=index&a=init" title="首页">首页</a>
+               </li> 
+               <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=5a54570a56d96bb2ef96d044e249cf75&sql=select+%2A+from+v9_category+where+parentid%3D0\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from v9_category where parentid=0 LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?> 
+               <?php $n=1;if(is_array($data)) foreach($data AS $r) { ?> 
+               <li class="nav_li"> <a class="on" href="" title="<?php echo $r['catname'];?>"><?php echo $r['catname'];?></a> 
+                <div class="subnav sub-ul01"> 
+                 <ul>
+                   <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=7c2b77507d5ff5549488d4dcfc54f22a&sql=select+%2A+from+v9_category+where+parentid%3D%24r%5Bcatid%5D\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from v9_category where parentid=$r[catid] LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?> 
+                   <?php $n=1;if(is_array($data)) foreach($data AS $rr) { ?> 
+                  <li>
+                    <a href="<?php echo $rr['url'];?>"><?php echo $rr['catname'];?></a>
+                  </li> 
+                   <?php $n++;}unset($n); ?> <?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?> 
+                 </ul> 
+                </div> 
+               </li> 
+       <?php $n++;}unset($n); ?> <?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?> 
+      </ul> 
+        </div>
+    </div>
+    </div>
+    <div class="subnavbg"></div>
+</div><!--end header-->
+<script type="text/javascript">
+
+    $(function () {
+        function danzi() {
+            var str = document.getElementById("searchword").value;
+            var str1 = "";
+            var a = str.split(" ");
+            var tag = 0;
+            var tag1 = 0;
+
+            var SPECIAL_STR = "￥#$~!@%^&*();'\"?><[]{}\\|,:/=+—“”‘";
+            for (i = 0; i < str.length; i++)
+                if (SPECIAL_STR.indexOf(str.charAt(i)) != -1) {
+                    alert("不能包含非法字符(" + str.charAt(i) + ")！");
+                    document.getElementById("searchword").focus();
+                    return false;
+                }
+
+            for (var i = 0; i < a.length; i++) {
+                if (a[i].length > 1) {
+                    tag = 1;
+                    str1 = str1 + " " + a[i];
+                    //break;
+                }
+                if (a[i].length == 1) {
+                    tag1 = 1;
+                    //break;
+                }
+            }
+            if (tag1 != 0) {
+                alert("友情提示：系统发现您输入了表意不清的单个汉字或字母，这可能导致您无法搜到相关结果或者搜到的不是您想要的结果，请补全关键词或检查去掉不必要的空格！");
+            }
+            if (tag != 1) {
+                str1 = str.replace(/\s+/g, "");
+            }
+            str1 = str1.replace(/^\s+|\s+$/g, "");
+            document.getElementById("searchword").value = str1;
+            return str1;
+        }
+
+        //二级导航
+        $(".nav_li").not(":first-child").hover(
+            function () {
+                $(this).addClass("nav_li_hover");
+                $(".subnavbg").show();
+            },
+            function () {
+                $(this).removeClass("nav_li_hover");
+                $(".subnavbg").hide();
+            }
+        );
+        $(".h-r-nav").hover(
+            function () {
+                $(this).addClass("h-r-nav-hover");
+            },
+            function () {
+                $(this).removeClass("h-r-nav-hover");
+            }
+        );
+        $.fn.extend({ 
+         pingCrcHome:function(imgurl){  
+          var _this=$(this);
+          var img = new Image();  
+          var start = new Date().getTime();  
+          img.src = imgurl +"?t="+start;  
+          var flag = false;  
+          img.onload = function(){  
+             flag = true; 
+             _this.attr("href","http://home.crc.com.cn/");
+          }  
+          var timer = setTimeout(function(){  
+            if(!flag){  
+              flag = false; 
+              _this.attr("href","../../other/error/");
+            }  
+            clearTimeout(timer);
+          },1000);  
+         }
+        }) 
+  
+  $("#toCrcHome").pingCrcHome('http://portal.crc.com.cn/CRCLogin/images/ldap_logo.png');
+
+    });
+</script>
+
+<!--头部结束-->
+<!--end header-->
+
+<div class="other-topimg" id="featured">
+    <div id="slider">
+        <ul>
+            <li  class="sliderImage"><em class="img-top-bg"></em>
+                <img src="mystatic/page/picture/p020130923605697243617.jpg" /> <span></span>
+            </li>
+        </ul>
+   </div> 
+ </div><!--end other-topimg--><div  id="overlay">  
+<div class="otherswrap" id="discover">
+    <div class="layout">
+        <div class="othersmenu fl"> 
+      <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=8aafb3f8260d5d76e99f8c1094009bcf&sql=select+%2A+from+v9_category+where+catid%3D%24_GET%5Bcatid%5D\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from v9_category where catid=$_GET[catid] LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?>
+      <?php $n=1;if(is_array($data)) foreach($data AS $v) { ?>
+      <?php if($v[parentid] == 0) { ?>
+        <div class="other-titles"> 
+        <h2><?php echo $v['catname'];?></h2> 
+        </div>  
+        <div class="menu"> 
+        <ul>        
+        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=7d0e8048239e8de227189da92bbec110&sql=select+%2A+from+v9_category+where+parentid%3D%24v%5Bcatid%5D\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from v9_category where parentid=$v[catid] LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?>
+        <?php $n=1;if(is_array($data)) foreach($data AS $vv) { ?>
+        
+        <li id="OWNER_<?php echo $vv['catid'];?>"> 
+            <a href="<?php echo $vv['url'];?>" class="tit"><?php echo $vv['catname'];?></a>            
+        </li>
+        
+        <?php $n++;}unset($n); ?>
+        <?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>        
+        </ul> 
+        </div>
+      <?php } else { ?>  
+        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=210c920a57d374e671e5e777a5083e1d&sql=select+%2A+from+v9_category+where+catid%3D%24v%5Bparentid%5D\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from v9_category where catid=$v[parentid] LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?>
+        <?php $n=1;if(is_array($data)) foreach($data AS $v) { ?>
+        <div class="other-titles"> 
+        <h2><?php echo $v['catname'];?></h2> 
+        </div>  
+        <div class="menu"> 
+        <ul>        
+        <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=7d0e8048239e8de227189da92bbec110&sql=select+%2A+from+v9_category+where+parentid%3D%24v%5Bcatid%5D\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from v9_category where parentid=$v[catid] LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?>
+        <?php $n=1;if(is_array($data)) foreach($data AS $vv) { ?>
+        
+        <li id="OWNER_<?php echo $vv['catid'];?>"> 
+            <a href="<?php echo $vv['url'];?>" class="tit"><?php echo $vv['catname'];?></a>            
+        </li>
+        
+        <?php $n++;}unset($n); ?>
+        <?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>        
+        </ul> 
+        </div>    
+        <?php $n++;}unset($n); ?>
+        <?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>
+      <?php } ?>        
+      <?php $n++;}unset($n); ?>
+      <?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>
+      <!--end menu--> 
+     </div> 
+<script language="javascript">
+
+var obj=<?php echo $_GET['catid'];?>;//当前栏目
+document.getElementById("OWNER_"+obj).className="on";
+
+</script> 
+        <!--end othersmenu-->
+            <div class="othersmain business-brandactiv fr" style="min-height:400px;">
+            	<?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"get\" data=\"op=get&tag_md5=8aafb3f8260d5d76e99f8c1094009bcf&sql=select+%2A+from+v9_category+where+catid%3D%24_GET%5Bcatid%5D\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}pc_base::load_sys_class("get_model", "model", 0);$get_db = new get_model();$r = $get_db->sql_query("select * from v9_category where catid=$_GET[catid] LIMIT 20");while(($s = $get_db->fetch_next()) != false) {$a[] = $s;}$data = $a;unset($a);?>
+        
+                  <div class="other-titles">
+                   <?php $n=1;if(is_array($data)) foreach($data AS $r) { ?>   
+
+                   <?php if($r[parentid] == 0) { ?> 
+                   <h2></h2>
+                   <?php } else { ?>
+                   <h2><?php echo $r['catname'];?></h2>
+                   <?php } ?> 
+
+                   <div class="fr location">
+                    <a href="?m=content&c=index&a=init" class="CurrChnlCls">首页</a>&nbsp;–&nbsp;
+                    <a href="" class="CurrChnlCls"><?php echo $v['catname'];?></a>&nbsp;
+                    <?php if($r[parentid] != 0) { ?>
+                    –&nbsp;<a href="<?php echo $r['url'];?>" class="CurrChnlCls"><?php echo $r['catname'];?></a>        
+                    <?php } ?>
+                   </div>
+
+                   <?php $n++;}unset($n); ?>      
+                  </div>
+                 
+                    <div class="exchange-searchmain">
+                        <div style="float: left; height: 560px;margin-right:50px"><img width="322" height="407" style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" alt oldsrc="mystatic/page/picture/w020170220608954146238.jpg" complete="complete" src="./201309/W020170220608954146238.jpg" />
+                        </div>
+                        
+                        <p><?php echo $content;?></p>
+                    </div>
+                                               
+            </div><!--end othersmain-->
+        </div>
+    </div><!--end otherswrap-->
+   <div class="footer">
+    <ul>
+        <li><a href="../../other_1/map/" title="网站地图">网站地图</a></li>
+        <li>|</li>
+        <li><a href="../../other_1/privacy/" title="隐私安全">隐私安全</a></li>
+        <li>|</li>
+        <li><a href="../../other_1/nav/" title="站外导航">站外导航</a></li>
+        <li>|</li>
+        <li><a href="../../other_1/banquan/" title="版权所有">版权所有</a></li>
+        <li>|</li>
+        <li><a href="../../other_1/faq/" title="常见问题">常见问题</a></li>
+        <li>|</li>
+        <li><a href="/communication/contact/" title="联系方式">联系方式</a></li>
+        <li>|</li>
+        <li><a href="/other/rss/" title="RSS订阅" class="f_rss">RSS订阅</a></li>
+        
+    </ul>
+
+    <p>Copyright &copy; 华润（集团）有限公司　&nbsp;&nbsp; <a target="_blank" href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action">京ICP备05045648号</a>　&nbsp;&nbsp;   技术支持：华润集团信息管理部</p>
+  <!--  <div class="btm"><img src="mystatic/page/picture/cn.gif" alt="统计" /></div> -->
+</div><!--end footer-->
+
+<!--<script src="mystatic/page/js/dma.js" type="text/javascript"></script>-->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c0e95100226a77ae3fb3e5406800e3db";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</div><!--end overlay-->
+<div class="gotopbox">
+	<div style="display: none" id="goTopBtn">
+    	<a class="iconbg btn-gotohome" href="../../">返回到首页</a>
+    	<a class="iconbg btn-gototop"  id="btn-gototop">回到顶部</a>
+    </div>
+</div>
+
+
+</body>
+</html>
+<script src="mystatic/page/js/jianfan.js"></script>
